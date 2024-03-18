@@ -3,43 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrrodr <gabrrodr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 13:34:01 by gabrrodr          #+#    #+#             */
-/*   Updated: 2024/01/30 13:54:15 by gabrrodr         ###   ########.fr       */
+/*   Created: 2024/02/22 17:12:51 by gabrrodr          #+#    #+#             */
+/*   Updated: 2024/02/23 13:47:32 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+# include "Contact.hpp"
 # include <iostream>
-# include <iomanip>
 # include <string>
+# include <iomanip>
 
-class Contact
-{
+class PhoneBook {
+	private:
+		Contact	list[8];
+		int	length;
 	public:
-	std::string	firstName;
-	std::string	lastName;
-	std::string	nickname;
-	std::string	phoneNumber;
-	std::string	darkestSecret;
-	
-	void	display()
-	{
-		std::cout << firstName;
-		std::cout << " : ";
-		std::cout << phoneNumber;
-	}
+		PhoneBook();
+		void	addContact();
+		void	display() const;
+		void	search();
+		~PhoneBook();
 };
-
-class PhoneBook
-{
-	public:
-	
-};
-
-
 
 #endif

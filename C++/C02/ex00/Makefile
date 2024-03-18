@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gabrrodr <gabrrodr@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/05 16:22:29 by gabrrodr          #+#    #+#              #
-#    Updated: 2024/02/05 16:22:29 by gabrrodr         ###   ########.fr        #
+#    Created: 2024/02/12 16:58:07 by gabrrodr          #+#    #+#              #
+#    Updated: 2024/02/12 16:58:07 by gabrrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp \
+SRC =	main.cpp \
+		Fixed.cpp \
 
-OBJ = $(SRC:.cpp=.o)
+OBJ =	$(SRC:.cpp=.o)
 
-all: hi
-pe
-hi: $(OBJ)
-	c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o hi
+all : Fixed
 
-clean:
-	rm -rf $(OBJ)
+Fixed : $(OBJ) Fixed.hpp
+		c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o Fixed
+
+clean :
+		rm -rf $(OBJ) Fixed

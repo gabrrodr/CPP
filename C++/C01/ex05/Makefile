@@ -5,19 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gabrrodr <gabrrodr@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/05 16:22:29 by gabrrodr          #+#    #+#              #
-#    Updated: 2024/02/05 16:22:29 by gabrrodr         ###   ########.fr        #
+#    Created: 2024/02/12 11:45:56 by gabrrodr          #+#    #+#              #
+#    Updated: 2024/02/12 11:45:56 by gabrrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp \
+SRC =	Harl.cpp \
+		main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-all: hi
-pe
-hi: $(OBJ)
-	c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o hi
+all : karen
 
-clean:
-	rm -rf $(OBJ)
+karen : $(OBJ) Harl.hpp
+		c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o karen
+
+clean :
+		rm -rf $(OBJ) karen
+

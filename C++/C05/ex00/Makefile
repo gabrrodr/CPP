@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gabrrodr <gabrrodr@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/05 16:22:29 by gabrrodr          #+#    #+#              #
-#    Updated: 2024/02/05 16:22:29 by gabrrodr         ###   ########.fr        #
+#    Created: 2024/02/29 17:21:12 by gabrrodr          #+#    #+#              #
+#    Updated: 2024/02/29 17:21:12 by gabrrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp \
+SRC	=	Bureaucrat.cpp \
+		main.cpp \
 
-OBJ = $(SRC:.cpp=.o)
+OBJ	=	$(SRC:.cpp=.o)
 
-all: hi
-pe
-hi: $(OBJ)
-	c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o hi
+all : Bureaucrat
 
-clean:
-	rm -rf $(OBJ)
+Bureaucrat : $(OBJ) Bureaucrat.hpp
+		c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o Bureaucrat
+
+clean :
+		rm -rf $(OBJ) Bureaucrat

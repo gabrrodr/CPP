@@ -23,4 +23,4 @@ attack : $(OBJ) HumanA.hpp HumanB.hpp Weapon.hpp
 		c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o attack
 
 clean :
-		rm -rf $(OBJ)
+		rm -rf $(OBJ) attack

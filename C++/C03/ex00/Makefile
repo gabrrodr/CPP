@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gabrrodr <gabrrodr@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/05 16:22:29 by gabrrodr          #+#    #+#              #
-#    Updated: 2024/02/05 16:22:29 by gabrrodr         ###   ########.fr        #
+#    Created: 2024/02/21 15:41:49 by gabrrodr          #+#    #+#              #
+#    Updated: 2024/02/21 15:41:49 by gabrrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp \
+SRC =	ClapTrap.cpp \
+		main.cpp \
 
-OBJ = $(SRC:.cpp=.o)
+OBJ =	$(SRC:.cpp=.o)
 
-all: hi
-pe
-hi: $(OBJ)
-	c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o hi
+all : ClapTrap
 
-clean:
-	rm -rf $(OBJ)
+ClapTrap : $(OBJ) ClapTrap.hpp
+		c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o ClapTrap
+
+clean :
+		rm -rf $(OBJ) ClapTrap

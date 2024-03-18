@@ -5,19 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gabrrodr <gabrrodr@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/05 16:22:29 by gabrrodr          #+#    #+#              #
-#    Updated: 2024/02/05 16:22:29 by gabrrodr         ###   ########.fr        #
+#    Created: 2024/03/11 11:40:34 by gabrrodr          #+#    #+#              #
+#    Updated: 2024/03/11 11:40:34 by gabrrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp \
+SRC	=	AForm.cpp \
+		Bureaucrat.cpp \
+		main.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp \
 
-OBJ = $(SRC:.cpp=.o)
+OBJ	=	$(SRC:.cpp=.o)
 
-all: hi
-pe
-hi: $(OBJ)
-	c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o hi
+all : AForm
 
-clean:
-	rm -rf $(OBJ)
+AForm : $(OBJ) AForm.hpp Bureaucrat.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+		c++ -std=c++98 -Wall -Wextra -Werror $(SRC) -o AForm
+
+clean : 
+		rm -rf $(OBJ) AForm
